@@ -1,0 +1,31 @@
+<div class="container">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Product List</h2>
+        <br>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ProductID</th>
+                    <th>ProductName</th>
+                    <th>ProductCost</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of product">
+                    <td>{{p.pid}}</td>
+                    <td>{{p.pname}}</td>
+                    <td>{{p.pcost}}</td>
+                    <td><button (click)="deleteProduct(p.pid)" class="btn btn-danger">Delete</button> 
+                        <button (click)="updateProduct(p.pid)" class="btn btn-info" style="margin-left: 10px">Update</button>
+                        <button (click)="detailProduct(p.pid)" class="btn btn-primary" style="margin-left: 10px">Details</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
